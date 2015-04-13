@@ -61,8 +61,8 @@ public class MKImageView: UIImageView
     }
     private lazy var mkLayer: MKLayer = MKLayer(superLayer: self.layer)
 
-    override public init() {
-        super.init()
+    convenience public init() {
+        self.init(image: nil)
         setup()
     }
 
@@ -103,9 +103,9 @@ public class MKImageView: UIImageView
         mkLayer.animateAlphaForBackgroundLayer(backgroundAniTimingFunction, duration: CFTimeInterval(aniDuration))
     }
 
-    override public func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+    override public func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         super.touchesBegan(touches, withEvent: event)
-        if let firstTouch = touches.anyObject() as? UITouch {
+        if let firstTouch = touches.first as? UITouch {
             let location = firstTouch.locationInView(self)
             animateRipple(location: location)
         }
