@@ -82,6 +82,12 @@ public class MKTextField : UITextField {
             mkLayer.superLayerDidResize()
         }
     }
+    
+    override public var frame: CGRect {
+        didSet {
+            mkLayer.superLayerDidResize()
+        }
+    }
 
     private lazy var mkLayer: MKLayer = MKLayer(superLayer: self.layer)
     private var floatingLabel: UILabel!
