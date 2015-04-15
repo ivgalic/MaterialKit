@@ -8,7 +8,7 @@
 
 import UIKit
 
-@IBDesignable
+//@IBDesignable
 public class MKButton : UIButton
 {
     @IBInspectable public var maskEnabled: Bool = true {

@@ -8,7 +8,7 @@
 
 import UIKit
 
-@IBDesignable
+//@IBDesignable
 public class MKImageView: UIImageView
 {
     @IBInspectable public var maskEnabled: Bool = true {
