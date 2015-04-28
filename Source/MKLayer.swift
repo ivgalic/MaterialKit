@@ -192,6 +192,17 @@ public class MKLayer {
     public func animateMaskLayerShadow() {
 
     }
+    
+    public func stopAllAnimations() {
+        superLayer.removeAllAnimations()
+        rippleLayer.removeAllAnimations()
+        backgroundLayer.removeAllAnimations()
+        maskLayer.removeAllAnimations()
+    }
+    
+    public func removeAllAnimationsForLayer(layer: CALayer) {
+        layer.removeAllAnimations()
+    }
 
     private func animateShadowForLayer(layer: CALayer, fromRadius: CGFloat, toRadius: CGFloat, fromOpacity: Float, toOpacity: Float, timingFunction: MKTimingFunction, duration: CFTimeInterval) {
         let radiusAnimation = CABasicAnimation(keyPath: "shadowRadius")
